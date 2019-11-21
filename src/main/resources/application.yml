@@ -1,0 +1,37 @@
+server:
+  port: 32781
+
+tomcat:
+  ajp:
+    port: 8010
+    remoteauthentication: false
+    enabled: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3311/smsGateway?useSSL=false&useTimezone=true&serverTimezone=America/Sao_Paulo
+    username: root
+    password: root
+    tomcat:
+      max-wait: 20000
+      max-active: 50
+      max-idle: 20
+      min-idle: 15
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    properties:
+      hibernate:
+        show_sql: false
+        use_sql_comments: false
+        format_sql: false
+
+push:
+  radius: 150
+  addressOne: https://onesignal.com/api/v1/notifications
+
+app:
+  mode: PRODUCTION
+
+
